@@ -33,7 +33,11 @@ function Footer() {
             <p className="mt-4 text-sm text-clay max-w-xs">
               A quiet place to write, read, and think out loud.
             </p>
-            <p className="mt-8 text-xs font-mono text-clay/70">
+            {/* 👇 Yahan maine suppressHydrationWarning add kar diya hai */}
+            <p
+              className="mt-8 text-xs font-mono text-clay/70"
+              suppressHydrationWarning={true}
+            >
               © {new Date().getFullYear()} Blogify. All rights reserved.
             </p>
           </div>
