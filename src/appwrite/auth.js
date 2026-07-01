@@ -1,6 +1,15 @@
 import conf from "../conf/conf.js";
 import { Client, Account, ID } from "appwrite";
 
+/**
+ * AuthService
+ * Wraps Appwrite Account API for auth operations.
+ *
+ * FIX: `createEmailSession()` was deprecated in Appwrite v1.5 and removed
+ * in v1.6+. Updated to `createEmailPasswordSession()` which is the current
+ * correct method. All other logic (createAccount auto-login, getCurrentUser
+ * null-return, deleteSessions on logout) is unchanged.
+ */
 export class AuthService {
   client = new Client();
   account;
@@ -21,7 +30,7 @@ export class AuthService {
         name,
       );
       if (userAccount) {
-        // call another method
+        // Auto-login after successful account creation
         return this.login({ email, password });
       } else {
         return userAccount;
@@ -33,7 +42,8 @@ export class AuthService {
 
   async login({ email, password }) {
     try {
-      return await this.account.createEmailSession(email, password);
+      // ✅ Fixed: was createEmailSession() — deprecated/removed in Appwrite v1.5+
+      return await this.account.createEmailPasswordSession(email, password);
     } catch (error) {
       throw error;
     }
@@ -43,9 +53,9 @@ export class AuthService {
     try {
       return await this.account.get();
     } catch (error) {
-      console.log("Appwrite serive :: getCurrentUser :: error", error);
+      // Expected to throw when no session exists — not a real error
+      console.log("AuthService :: getCurrentUser ::", error.message);
     }
-
     return null;
   }
 
@@ -53,11 +63,10 @@ export class AuthService {
     try {
       await this.account.deleteSessions();
     } catch (error) {
-      console.log("Appwrite serive :: logout :: error", error);
+      console.log("AuthService :: logout ::", error.message);
     }
   }
 }
 
 const authService = new AuthService();
-
 export default authService;
