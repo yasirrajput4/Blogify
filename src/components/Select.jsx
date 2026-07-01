@@ -1,12 +1,18 @@
 import React, { useId } from "react";
 
-function Select({ options, label, className, ...props }, ref) {
+/**
+ * Select — same props (options, label, className, ...props) and forwardRef
+ * wiring as before. Visual treatment matches Input so forms feel cohesive.
+ */
+function Select({ options, label, className = "", ...props }, ref) {
   const id = useId();
   return (
     <div className="w-full">
-      {/* Render the label text inside the tag to fix the accessibility bug */}
       {label && (
-        <label htmlFor={id} className="inline-block mb-1 pl-1">
+        <label
+          htmlFor={id}
+          className="block mb-1.5 pl-0.5 text-sm font-medium text-ink-soft"
+        >
           {label}
         </label>
       )}
@@ -14,7 +20,15 @@ function Select({ options, label, className, ...props }, ref) {
         {...props}
         id={id}
         ref={ref}
-        className={`px-3 py-2 rounded-lg bg-white text-black outline-none focus:bg-gray-50 duration-200 border border-gray-200 w-full ${className}`}
+        className={`
+          w-full px-3.5 py-2.5 rounded-md
+          bg-white text-ink
+          border border-rule
+          outline-none cursor-pointer
+          transition-colors duration-150
+          focus:border-terracotta focus:ring-1 focus:ring-terracotta/30
+          ${className}
+        `}
       >
         {options?.map((option) => (
           <option key={option} value={option}>

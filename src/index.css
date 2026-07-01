@@ -1,3 +1,126 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ---------------------------------------------------------------------
+   Editorial base layer.
+   Sets the paper/ink defaults and selection color once, globally, so
+   every page inherits the right typographic feel without repeating
+   utility classes everywhere.
+---------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-terracotta/20 text-ink;
+  }
+
+  /* Visible keyboard focus everywhere — accessibility floor */
+  :focus-visible {
+    outline: 2px solid theme("colors.terracotta");
+    outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   .browser-css — styles the parsed TinyMCE HTML on the single Post page.
+   This is the "reading mode" typography: generous line-height, a serif
+   for body copy, and a terracotta link treatment that matches the rest
+   of the app. Scoped to this class so it never leaks into UI chrome.
+---------------------------------------------------------------------- */
+@layer components {
+  .browser-css {
+    @apply font-display text-[1.15rem] leading-[1.85] text-ink-soft;
+  }
+
+  .browser-css p {
+    @apply mb-6;
+  }
+
+  .browser-css h1,
+  .browser-css h2,
+  .browser-css h3 {
+    @apply font-display font-semibold text-ink mt-10 mb-4;
+  }
+
+  .browser-css h2 {
+    @apply text-2xl;
+  }
+
+  .browser-css h3 {
+    @apply text-xl;
+  }
+
+  .browser-css a {
+    @apply text-terracotta underline decoration-terracotta/30 underline-offset-4 hover:decoration-terracotta transition-colors;
+  }
+
+  .browser-css blockquote {
+    @apply border-l-2 border-terracotta pl-6 italic text-clay my-8;
+  }
+
+  .browser-css img {
+    @apply rounded-md my-8;
+  }
+
+  .browser-css ul,
+  .browser-css ol {
+    @apply mb-6 pl-6 space-y-2;
+  }
+
+  .browser-css ul {
+    @apply list-disc;
+  }
+
+  .browser-css ol {
+    @apply list-decimal;
+  }
+
+  .browser-css code {
+    @apply font-mono text-sm bg-paper-dim px-1.5 py-0.5 rounded;
+  }
+
+  .browser-css pre {
+    @apply font-mono text-sm bg-ink text-paper p-5 rounded-lg overflow-x-auto my-8;
+  }
+
+  /* Reusable skeleton shimmer for loading states */
+  .skeleton {
+    @apply relative overflow-hidden bg-paper-dim;
+  }
+
+  .skeleton::after {
+    content: "";
+    @apply absolute inset-0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(31, 27, 22, 0.06),
+      transparent
+    );
+    animation: shimmer 1.6s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
