@@ -1,5 +1,5 @@
 import React from "react";
-import { Signup as SignupComponent } from "../components";
+import { Signup as SignupComponent } from "../components/Signup";
 
 // Signup page — same thin wrapper as Login page. Matched vertical centering
 // so the card sits in the optical middle of the viewport.

@@ -1,5 +1,5 @@
 import React from "react";
-import { Login as LoginComponent } from "../components";
+import { Login as LoginComponent } from "../components/Login";
 
 /**
  * Login page — wrapper that provides vertical breathing room around the

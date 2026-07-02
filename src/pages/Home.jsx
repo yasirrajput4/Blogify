@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
-import { Container, PostCard } from "../components";
+import { Container } from "../components/container/Container";
+import { PostCard } from "../components/PostCard";
 
 /**
  * Home — same appwriteService.getPosts() call and posts state. Added a

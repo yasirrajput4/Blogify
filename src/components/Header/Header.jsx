@@ -1,5 +1,7 @@
 import React from "react";
-import { Container, Logo, LogoutBtn } from "../index";
+import { Container } from "../../components/container/Container";
+import { Logo } from "../../components/Logo";
+import { LogoutBtn } from "../../components/Header/LogoutBtn";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
