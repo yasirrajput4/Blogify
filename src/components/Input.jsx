@@ -1,12 +1,5 @@
 import React, { useId } from "react";
 
-/**
- * Input
- * Same forwardRef + prop signature as before (label, type, className, ...props,
- * ref). react-hook-form's {...register(...)} spread is untouched. Only the
- * visual treatment changed: warm paper fill, hairline rule instead of a
- * boxed border, and a terracotta focus rule instead of a generic blue ring.
- */
 const Input = React.forwardRef(function Input(
   { label, type = "text", className = "", ...props },
   ref,

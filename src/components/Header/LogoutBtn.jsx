@@ -3,13 +3,6 @@ import { useDispatch } from "react-redux";
 import authService from "../../appwrite/auth";
 import { logout } from "../../store/authSlice";
 
-/**
- * LogoutBtn — referenced by Header but never provided in the upload.
- * Calls authService.logout() then dispatches the logout action, which
- * is the standard Appwrite + Redux pattern matching the login flow.
- * Added a brief `loading` state so the button doesn't feel frozen
- * during the async call.
- */
 export default function LogoutBtn() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);

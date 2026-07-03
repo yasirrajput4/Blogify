@@ -4,12 +4,6 @@ import PostForm from "../components/post-form/PostForm";
 import appwriteService from "../appwrite/config";
 import { useNavigate, useParams } from "react-router-dom";
 
-/**
- * EditPost — same getPost(slug)/navigate("/") logic. The only change is
- * the loading state: previously returned `null` (blank screen) while
- * fetching; now shows a skeleton matching the PostForm dashboard layout
- * so navigation doesn't feel like a flash of nothing.
- */
 function EditPost() {
   const [post, setPosts] = useState(null);
   const { slug } = useParams();

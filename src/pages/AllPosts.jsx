@@ -3,16 +3,6 @@ import Container from "../components/container/Container";
 import PostCard from "../components/PostCard";
 import appwriteService from "../appwrite/config";
 
-/**
- * AllPosts — same appwriteService.getPosts() call and the same data
- * shape (posts.documents) as before. NOTE: the original called
- * appwriteService.getPosts() directly in the component body on every
- * render (outside useEffect), which re-fires the request on every
- * re-render including the one setPosts() itself triggers — an infinite
- * fetch loop. That call is moved inside useEffect here; the request
- * itself (and its [] arg) is unchanged. Flagging this since it's a
- * logic fix, not just a style choice.
- */
 function AllPosts() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);

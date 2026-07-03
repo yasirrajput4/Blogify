@@ -6,17 +6,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { Outlet } from "react-router-dom";
 
-/**
- * App — auth bootstrap (getCurrentUser → dispatch login/logout) is
- * identical. Changes:
- *   1. Removed the stray "TODO: " text before <Outlet /> — it was
- *      rendering literally on every page.
- *   2. Loading state now shows a centered spinner instead of returning
- *      null (blank white flash on every hard refresh).
- *   3. Background updated to `bg-paper` to match the editorial palette.
- *   4. Added `dispatch` to the useEffect dependency array (was already
- *      in the original as a comment; made it explicit).
- */
 function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();

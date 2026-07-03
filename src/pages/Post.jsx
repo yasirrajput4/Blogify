@@ -6,15 +6,6 @@ import Container from "../components/container/Container";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 
-/**
- * Post — getPost/deletePost/isAuthor logic is unchanged. Layout redesigned
- * into a reading-page format: centered title block, a thin byline/meta
- * rail (read-time, derived from post.content — additive only), and the
- * featured image as a wide banner instead of a bordered box. Added a
- * copy-link button as the small clipboard micro-feature suggested in
- * the brief; it only touches local `copied` UI state, nothing in the
- * data layer.
- */
 export default function Post() {
   const [post, setPost] = useState(null);
   const [copied, setCopied] = useState(false);

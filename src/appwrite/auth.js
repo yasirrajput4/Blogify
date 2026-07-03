@@ -1,15 +1,6 @@
 import conf from "../conf/conf.js";
 import { Client, Account, ID } from "appwrite";
 
-/**
- * AuthService
- * Wraps Appwrite Account API for auth operations.
- *
- * FIX: `createEmailSession()` was deprecated in Appwrite v1.5 and removed
- * in v1.6+. Updated to `createEmailPasswordSession()` which is the current
- * correct method. All other logic (createAccount auto-login, getCurrentUser
- * null-return, deleteSessions on logout) is unchanged.
- */
 export class AuthService {
   client = new Client();
   account;
@@ -42,7 +33,7 @@ export class AuthService {
 
   async login({ email, password }) {
     try {
-      // ✅ Fixed: was createEmailSession() — deprecated/removed in Appwrite v1.5+
+      //  Fixed: was createEmailSession() — deprecated/removed in Appwrite v1.5+
       return await this.account.createEmailPasswordSession(email, password);
     } catch (error) {
       throw error;

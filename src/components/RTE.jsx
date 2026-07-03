@@ -2,13 +2,6 @@ import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form";
 
-/**
- * RTE — identical name/control/label/defaultValue props and Controller
- * wiring as before; onEditorChange still feeds react-hook-form directly.
- * Only the wrapper chrome and the editor's internal content_style changed,
- * so the writing surface visually matches the "browser-css" reading
- * styles defined in index.css (same serif body, terracotta links).
- */
 export default function RTE({ name, control, label, defaultValue = "" }) {
   return (
     <div className="w-full">

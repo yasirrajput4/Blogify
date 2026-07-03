@@ -3,12 +3,6 @@ import appwriteService from "../appwrite/config";
 import Container from "../components/container/Container";
 import PostCard from "../components/PostCard";
 
-/**
- * Home — same appwriteService.getPosts() call and posts state. Added a
- * `loading` flag (purely additive, doesn't change the fetch logic) so we
- * can distinguish "still loading" from "no posts yet" and show a proper
- * skeleton instead of nothing. Empty and loaded states both redesigned.
- */
 function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);

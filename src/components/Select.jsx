@@ -1,9 +1,5 @@
 import React, { useId } from "react";
 
-/**
- * Select — same props (options, label, className, ...props) and forwardRef
- * wiring as before. Visual treatment matches Input so forms feel cohesive.
- */
 function Select({ options, label, className = "", ...props }, ref) {
   const id = useId();
   return (

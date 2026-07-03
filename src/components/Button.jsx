@@ -1,13 +1,5 @@
 import React from "react";
 
-/**
- * Button
- * Prop API is unchanged: type, bgColor, textColor, className, children, ...props.
- * `bgColor`/`textColor` still work exactly as before (any caller passing
- * literal Tailwind classes like "bg-green-500" continues to work) — we've
- * just changed the DEFAULT values so an un-styled <Button> now matches the
- * editorial system, and added consistent hover/active/disabled motion.
- */
 export default function Button({
   children,
   type = "button",

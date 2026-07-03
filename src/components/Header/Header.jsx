@@ -6,12 +6,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 
-/**
- * Header — masthead style instead of a generic SaaS navbar: paper
- * background, a single hairline rule underneath, and understated text
- * links instead of pill buttons. Auth logic, navItems list, and the
- * conditional LogoutBtn render are all untouched.
- */
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
   const navigate = useNavigate();

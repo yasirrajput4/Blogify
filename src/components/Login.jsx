@@ -8,12 +8,6 @@ import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
 import { useForm } from "react-hook-form";
 
-/**
- * Login — auth flow (authService.login, getCurrentUser, dispatch, navigate)
- * is byte-for-byte the same. Only presentation changed: a centered
- * editorial card with a serif heading, restrained spacing, and a polished
- * disabled/submitting state on the button via isSubmitting from RHF.
- */
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();

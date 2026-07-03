@@ -1,12 +1,6 @@
 import conf from "../conf/conf.js";
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
-/**
- * Service
- * Wraps Appwrite Databases + Storage APIs for all post/file operations.
- * No logic changes from the original — just cleaned up console.log
- * messages for consistency (service name was misspelled as "serive").
- */
 export class Service {
   client = new Client();
   databases;

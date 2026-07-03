@@ -9,14 +9,6 @@ import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-/**
- * PostForm — submit(), slugTransform(), the watch()->setValue() slug-sync
- * effect, and every register() call are unchanged. Restyled into a
- * two-column "creator dashboard": content fields on the left in a card,
- * a sticky publishing rail on the right (image preview, status, submit).
- * Added: a live word/read-time counter, sourced from the existing
- * `watch("content")` value — purely additive, doesn't touch submit logic.
- */
 export default function PostForm({ post }) {
   const {
     register,

@@ -2,13 +2,6 @@ import React from "react";
 import appwriteService from "../appwrite/config";
 import { Link } from "react-router-dom";
 
-/**
- * PostCard — same destructured props ($id, title, featuredImage), same
- * appwriteService.getFilePreview call. Redesigned from an image-on-top
- * card into a horizontal editorial entry: thumbnail on the side, a
- * left "spine" rule that turns terracotta on hover — this spine motif
- * repeats across the app as the visual signature.
- */
 function PostCard({ $id, title, featuredImage }) {
   return (
     <Link to={`/post/${$id}`} className="group block h-full">

@@ -15,10 +15,6 @@ import EditPost from "./pages/EditPost";
 import Post from "./pages/Post";
 import AllPosts from "./pages/AllPosts";
 
-/**
- * main.jsx — router tree is identical to the original.
- * No routes added, removed, or reordered.
- */
 const router = createBrowserRouter([
   {
     path: "/",

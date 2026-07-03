@@ -18,11 +18,6 @@ const COLUMNS = [
   },
 ];
 
-/**
- * Footer — same four-column structure and link list as before, restyled
- * onto the paper/ink palette with a hairline top rule instead of a heavy
- * border. No links, hrefs, or copy content removed.
- */
 function Footer() {
   return (
     <footer className="border-t border-rule bg-paper">

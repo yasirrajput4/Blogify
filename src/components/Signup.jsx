@@ -8,11 +8,6 @@ import Logo from "../components/Logo";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 
-/**
- * Signup — identical authService.createAccount / getCurrentUser /
- * dispatch / navigate flow. Same visual language as Login so the two
- * auth screens read as a matched pair.
- */
 function Signup() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
