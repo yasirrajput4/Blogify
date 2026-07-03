@@ -1,5 +1,4 @@
 import React from "react";
-// import { Signup as SignupComponent } from "../components/Signup";
 import SignupComponent from "../components/Signup";
 
 // Signup page — same thin wrapper as Login page. Matched vertical centering
