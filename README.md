@@ -1,191 +1,147 @@
 <div align="center">
 
-<br />
+<br/>
 
-<img src="https://img.shields.io/badge/Blogify-Editorial%20Blogging%20Platform-C1502E?style=for-the-badge&labelColor=1F1B16" alt="Blogify" />
+<h1>
+  <img src="https://img.shields.io/badge/📝-Blogify-C1502E?style=for-the-badge&labelColor=1F1B16&color=C1502E" alt="Blogify" />
+</h1>
 
-<br />
-<br />
-
-**A modern, editorial blogging platform — write, publish, and read stories beautifully.**
+<p><strong>A production-ready, full-stack blogging platform built with React + Appwrite.</strong><br/>
+Write beautifully. Publish instantly. Read with intention.</p>
 
 <p>
   <a href="https://blogify-eosin-zeta.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/🌐  Live Demo-blogify--eosin--zeta.vercel.app-C1502E?style=flat-square" alt="Live Demo" />
+    <img src="https://img.shields.io/badge/🌐  Live%20Demo-Open%20App-C1502E?style=flat-square&labelColor=1F1B16" />
   </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/yasirrajput4/Blogify/issues">
+    <img src="https://img.shields.io/github/issues/yasirrajput4/Blogify?style=flat-square&labelColor=1F1B16&color=E4DCC8" />
+  </a>
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/License-MIT-22C55E?style=flat-square&labelColor=1F1B16" />
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Tailwind-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Appwrite-Cloud-FD366E?style=flat-square&logo=appwrite&logoColor=white" alt="Appwrite" />
-  <img src="https://img.shields.io/badge/Redux-Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white" alt="Redux Toolkit" />
-  <img src="https://img.shields.io/badge/License-MIT-22C55E?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=20232A" />
+  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white&labelColor=1a1a2e" />
+  <img src="https://img.shields.io/badge/Tailwind-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white&labelColor=0f172a" />
+  <img src="https://img.shields.io/badge/Appwrite-Cloud-FD366E?style=flat-square&logo=appwrite&logoColor=white&labelColor=1a1a2e" />
+  <img src="https://img.shields.io/badge/Redux-Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white&labelColor=1a1a2e" />
 </p>
 
-<br />
+<br/>
+
+<a href="https://blogify-eosin-zeta.vercel.app" target="_blank">
+  <img
+    width="1912"
+    alt="Blogify — editorial blogging platform screenshot"
+    src="https://github.com/user-attachments/assets/4a38a342-68fb-440c-aca6-9f37667b9999"
+    style="border-radius: 12px;"
+  />
+</a>
+
+<br/>
+<sub><i>Click the screenshot to open the live app ↑</i></sub>
+
+<br/><br/>
 
 </div>
 
 ---
 
-## 📖 Table of Contents
+## What is Blogify?
 
-- [Overview](#-overview)
-- [Live Demo](#-live-demo)
-- [Tech Stack](#-tech-stack)
-- [Features](#-features)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Appwrite Setup](#-appwrite-setup)
-- [Design System](#-design-system)
-- [Available Scripts](#-available-scripts)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
+Blogify is a single-page application that handles the complete lifecycle of a blog post — from account creation and rich-text authoring, through image upload and storage, to public reading — with **zero custom backend code**. Appwrite Cloud handles all server-side concerns: authentication, database, and file storage.
+
+The front end is built around a handcrafted editorial design system — **Fraunces** variable serif for display text, **Inter** for UI chrome, and a warm paper palette that makes long-form content genuinely pleasant to read.
 
 ---
 
-## ✨ Overview
+## Tech Stack
 
-Blogify is a full-stack blogging application with a clean, editorial aesthetic inspired by Substack and Medium. Built with React and Appwrite as the backend, it delivers a complete content management experience — from writing with a rich text editor to reading with beautifully typeset prose.
-
-The design system is built around a **Fraunces serif + Inter sans-serif** pairing on a warm paper palette, with a signature terracotta accent that runs consistently through links, CTAs, hover states, and blockquotes.
-
----
-
-## 🌐 Live Demo
-
-> 🔗 **[blogify-eosin-zeta.vercel.app](https://blogify-eosin-zeta.vercel.app)**
-
-Create an account and start writing. All data is stored in Appwrite Cloud.
+| Layer       | Technology      | Why                                                                               |
+| ----------- | --------------- | --------------------------------------------------------------------------------- |
+| **UI**      | React 18 + Vite | Component model + instant HMR in dev, optimised bundles in prod                   |
+| **Styling** | Tailwind CSS    | Custom design tokens (`paper`, `ink`, `terracotta`) wired directly into utilities |
+| **BaaS**    | Appwrite Cloud  | Auth + Database + Storage — no Express, no Prisma, no deployment config           |
+| **State**   | Redux Toolkit   | Predictable global auth state with zero boilerplate                               |
+| **Forms**   | React Hook Form | Uncontrolled inputs, schema validation, `isSubmitting` guard out of the box       |
+| **Editor**  | TinyMCE         | Battle-tested WYSIWYG; `content_style` mirrors the reading-page prose styles      |
+| **Routing** | React Router v6 | Nested layouts, protected route guards, v7 future flags enabled                   |
 
 ---
 
-## 🛠️ Tech Stack
+## Feature Highlights
 
-| Layer                | Technology        | Purpose                                         |
-| -------------------- | ----------------- | ----------------------------------------------- |
-| Library              | React 18 (Vite)   | UI rendering & fast dev builds                  |
-| Styling              | Tailwind CSS      | Utility-first styling with custom design tokens |
-| Backend-as-a-Service | Appwrite Cloud    | Auth, Database, and File Storage                |
-| State Management     | Redux Toolkit     | Global authentication state                     |
-| Form Handling        | React Hook Form   | Form validation and controlled submission       |
-| Rich Text Editor     | TinyMCE           | WYSIWYG post content editing                    |
-| HTML Parsing         | html-react-parser | Safely renders stored post HTML on read page    |
-| Routing              | React Router v6   | Client-side navigation + protected route guards |
+**Core**
 
----
+- Full post CRUD — create, edit, publish (`active`), draft (`inactive`), delete
+- Author-only edit and delete controls rendered inline on the reading page
+- Auto-generated URL slug from title with manual override
+- Featured image upload, stored in Appwrite Storage, served via `getFileView()`
 
-## ✅ Features
+**Auth**
 
-### 📝 Core — Post Management
+- Email + password signup and login
+- Session persistence — Redux state rehydrated from Appwrite on every mount
+- Protected routes redirect unauthenticated users; auth pages redirect logged-in users
 
-- Create, read, update, and delete blog posts
-- Rich text editing with TinyMCE (images, lists, tables, headings, code blocks)
-- Featured image upload and storage via Appwrite Storage
-- Post status toggle — `active` (published) or `inactive` (draft)
-- Auto-generated URL slug from post title, with manual override
-- Author-only Edit and Delete controls on the reading page
+**UX Details**
 
-### 🔐 Authentication
-
-- Email + password signup and login via Appwrite Auth
-- Session persistence — auth state restored automatically on page refresh
-- Protected route guards — unauthenticated users redirected to `/login`
-- Guest-only routes — logged-in users redirected away from login/signup
-- Sign out clears all active sessions across devices
-
-### 🎨 UI / UX
-
-- Editorial design system — Fraunces serif headlines, Inter body, warm paper palette
-- Sticky header with backdrop blur and active route indicator
-- Shimmer skeleton loaders on all data-fetching pages
-- Polished empty states with contextual messaging
-- Branded wordmark pulse animation during initial auth check
-- Terracotta "spine" left-border hover effect on all post cards
-
-### ⚡ Micro-features
-
-- Live word count + estimated read time in the post editor
-- Read time badge on the single post reading page
-- One-click copy-link-to-clipboard on each post
-- TinyMCE `content_style` mirrors reading-page typography (true WYSIWYG)
-- Keyboard focus ring on all interactive elements (WCAG accessibility)
-- `prefers-reduced-motion` respected via global CSS
+- Shimmer skeleton loaders on every async page — no blank flash, no layout shift
+- Live word count and estimated read time, calculated in the editor and shown on the post page
+- One-click copy-link-to-clipboard on every post
+- `isSubmitting` disabled state on all form buttons — no double-submits
+- Keyboard focus rings on every interactive element (WCAG AA)
+- `prefers-reduced-motion` respected via a global CSS override
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Blogify/
-│
 ├── src/
-│   ├── appwrite/               # Appwrite service layer (auth + database + storage)
-│   ├── components/             # Reusable UI components + AuthLayout route guard
-│   ├── conf/                   # Environment variable config (conf.js)
-│   ├── pages/                  # Page-level components, one per route
-│   ├── store/                  # Redux store and authSlice
-│   ├── App.jsx                 # Root layout — session check on mount
-│   ├── main.jsx                # Entry point — router + Redux Provider
-│   └── index.css               # Tailwind directives + global editorial styles
+│   ├── appwrite/        # AuthService (auth) + Service (database, storage)
+│   ├── components/      # All UI components + AuthLayout route guard
+│   ├── conf/            # conf.js — wraps import.meta.env for type safety
+│   ├── pages/           # One component per route
+│   ├── store/           # Redux store + authSlice
+│   ├── App.jsx          # Root layout — Appwrite session check on mount
+│   ├── main.jsx         # Entry point — createBrowserRouter + Provider
+│   └── index.css        # Tailwind directives + editorial base + .browser-css prose
 │
-├── index.html                  # HTML shell — Google Fonts loaded here
-├── .env                        # Local environment variables (never commit)
-├── .env.example                # Safe template to share with collaborators
-├── tailwind.config.js          # Tailwind config with editorial design tokens
-├── vite.config.js              # Vite configuration
-├── .gitignore
+├── index.html           # HTML shell — Google Fonts (Fraunces + Inter) preloaded
+├── .env                 # Local environment secrets — never committed
+├── .env.example         # Safe template committed for collaborators
+├── tailwind.config.js   # Extended: editorial color palette + font families
 └── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### Prerequisites
-
-- **Node.js** v18+ — [Download](https://nodejs.org)
-- **Appwrite Cloud account** (free) — [Sign up](https://cloud.appwrite.io)
-- **TinyMCE API key** (free tier) — [Get key](https://www.tiny.cloud)
-
-### 1 — Clone the repository
+**Prerequisites:** Node.js ≥ 18 · Appwrite Cloud account · TinyMCE API key (free)
 
 ```bash
+# Clone and install
 git clone https://github.com/yasirrajput4/Blogify.git
 cd Blogify
-```
-
-### 2 — Install dependencies
-
-```bash
 npm install
-```
 
-### 3 — Configure environment variables
-
-```bash
+# Configure secrets
 cp .env.example .env
-```
+# → fill in your Appwrite + TinyMCE values
 
-Fill in your values — see [Environment Variables](#-environment-variables) below.
-
-### 4 — Run the development server
-
-```bash
+# Run
 npm run dev
+# → http://localhost:5173
 ```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🔑 Environment Variables
-
-Create a `.env` file in the project root with the following keys:
+## Environment Variables
 
 ```env
 VITE_APPWRITE_URL="https://cloud.appwrite.io/v1"
@@ -196,146 +152,86 @@ VITE_APPWRITE_BUCKET_ID="your_bucket_id"
 VITE_TINYMCE_API_KEY="your_tinymce_api_key"
 ```
 
-> ⚠️ Never commit `.env` to version control. It is already listed in `.gitignore`.
-
-These variables are consumed in `src/conf/conf.js` and injected into the app at build time by Vite via `import.meta.env`.
+> Variables are consumed in `src/conf/conf.js` and injected at build time via `import.meta.env`. `.env` is already in `.gitignore`.
 
 ---
 
-## ☁️ Appwrite Setup
+## Appwrite Configuration
 
-### 1 — Create a Database and Collection
+**Database collection attributes**
 
-In your Appwrite Console, create a database and add a collection with these attributes:
+| Attribute       | Type               | Required |
+| --------------- | ------------------ | -------- |
+| `title`         | String (255)       | ✅       |
+| `content`       | String (unlimited) | ✅       |
+| `featuredImage` | String (255)       | ✅       |
+| `status`        | String (20)        | ✅       |
+| `userId`        | String (255)       | ✅       |
 
-| Attribute       | Type   | Size      | Required |
-| --------------- | ------ | --------- | -------- |
-| `title`         | String | 255       | ✅       |
-| `content`       | String | unlimited | ✅       |
-| `featuredImage` | String | 255       | ✅       |
-| `status`        | String | 20        | ✅       |
-| `userId`        | String | 255       | ✅       |
+**Collection permissions** — `Any` → Read · `Users` → Create, Read, Update, Delete
 
-### 2 — Set Collection Permissions
+**Bucket permissions** — `Users` → Create, Read, Update, Delete
 
-| Role    | Create | Read | Update | Delete |
-| ------- | ------ | ---- | ------ | ------ |
-| `Any`   | ❌     | ✅   | ❌     | ❌     |
-| `Users` | ✅     | ✅   | ✅     | ✅     |
+> `getFileView()` is used instead of `getFilePreview()` — public bucket read is not required.
 
-### 3 — Create a Storage Bucket
-
-- Allowed MIME types: `image/jpeg`, `image/png`, `image/gif`, `image/webp`
-- Permissions: `Users` → Create, Read, Update, Delete
-
-> **Note:** This project uses `getFileView()` instead of `getFilePreview()` for image URLs. This means `Any Read` is **not required** on the bucket — `Users` permissions alone are sufficient and more secure.
-
-### 4 — Register your Web Platform
-
-**Appwrite Console → Project → Overview → Platforms → Add Platform → Web**
-
-Add:
-
-- `http://localhost:5173` for local development
-- `https://blogify-eosin-zeta.vercel.app` for production
+**Web platforms** — register `http://localhost:5173` and your production domain under **Project → Platforms → Web** to prevent CORS errors.
 
 ---
 
-## 🎨 Design System
+## Routes
 
-### Typography
-
-| Role      | Font                      | Usage                                               |
-| --------- | ------------------------- | --------------------------------------------------- |
-| Display   | Fraunces (variable serif) | Post titles, page headings, auth headings, wordmark |
-| Body / UI | Inter (sans-serif)        | Nav, labels, buttons, meta text, body copy          |
-| Mono      | System monospace          | Read time, dates, bylines, code snippets            |
-
-### Colour Palette
-
-| Token        | Hex       | Usage                                     |
-| ------------ | --------- | ----------------------------------------- |
-| `paper`      | `#FAF6EF` | Page background                           |
-| `paper-dim`  | `#F2ECDE` | Cards, sidebar wells, input backgrounds   |
-| `ink`        | `#1F1B16` | Primary headings and display text         |
-| `ink-soft`   | `#4A4339` | Body copy, paragraph text                 |
-| `clay`       | `#8B6F5C` | Meta text, placeholders, secondary labels |
-| `rule`       | `#E4DCC8` | All borders and dividers                  |
-| `terracotta` | `#C1502E` | Primary accent — CTAs, links, hover spine |
-| `sage`       | `#5B7B5A` | Success / "Update" button state           |
-
-### The Terracotta Spine
-
-Every post card has a `2px` left border (`border-rule`) that animates to `border-terracotta` on hover — matching the blockquote marker in the editor and links on the reading page. One repeating motif, like a manuscript annotation mark, is the visual signature of the Blogify design system.
+| Path               | Page                          | Auth                            |
+| ------------------ | ----------------------------- | ------------------------------- |
+| `/`                | Home — latest published posts | Public                          |
+| `/login`           | Login                         | Redirects home if authenticated |
+| `/signup`          | Signup                        | Redirects home if authenticated |
+| `/all-posts`       | All posts grid                | Protected                       |
+| `/add-post`        | Post editor — create          | Protected                       |
+| `/edit-post/:slug` | Post editor — edit            | Protected                       |
+| `/post/:slug`      | Post reading page             | Public                          |
 
 ---
 
-## 📦 Available Scripts
+## Scripts
 
 ```bash
-npm run dev       # Start local development server → http://localhost:5173
-npm run build     # Production build → output in dist/
-npm run preview   # Preview the production build locally
-npm run lint      # Run ESLint
+npm run dev      # Dev server → http://localhost:5173
+npm run build    # Production build → dist/
+npm run preview  # Serve production build locally
+npm run lint     # ESLint
 ```
 
 ---
 
-## 🚢 Deployment
+## Contributing
 
-This project is deployed on **Vercel**.
-
-### Deploy your own fork
+Issues and pull requests are welcome.
 
 ```bash
-npm install -g vercel
-vercel
+git checkout -b feat/your-feature
+git commit -m "feat: describe your change"
+git push origin feat/your-feature
+# open a Pull Request
 ```
 
-Add your `.env` variables in the Vercel dashboard:
-**Project → Settings → Environment Variables**
-
-Then add your Vercel domain to Appwrite's allowed Web Platforms to avoid CORS errors.
-
-### Netlify
-
-```bash
-npm run build
-# deploy the dist/ folder
-```
-
-Add environment variables under **Site → Site configuration → Environment variables**.
+Follow [Conventional Commits](https://www.conventionalcommits.org/).
 
 ---
 
-## 🤝 Contributing
+## License
 
-Contributions, issues, and feature requests are welcome!
-
-1. Fork the repository
-2. Create a feature branch — `git checkout -b feature/your-feature`
-3. Commit your changes — `git commit -m "feat: add your feature"`
-4. Push to your branch — `git push origin feature/your-feature`
-5. Open a Pull Request
-
-Please follow [Conventional Commits](https://www.conventionalcommits.org/) for commit messages.
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — free to use, modify, and distribute.
-See the [LICENSE](LICENSE) file for details.
+MIT — see [LICENSE](LICENSE).
 
 ---
 
 <div align="center">
 
-Made with ❤️ by <a href="https://github.com/yasirrajput4">Yasir Rajput</a>
+<br/>
 
-<br />
-<br />
+Built by [Yasir Rajput](https://github.com/yasirrajput4)
 
-⭐ Star this repo if you found it helpful!
+<br/>
+
+<sub>If this project was useful, a ⭐ goes a long way.</sub>
 
 </div>
