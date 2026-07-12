@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useId } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form";
 
 export default function RTE({ name, control, label, defaultValue = "" }) {
+  const id = useId();
+
   return (
     <div className="w-full">
       {label && (
-        <label className="block mb-1.5 pl-0.5 text-sm font-medium text-ink-soft">
+        <label
+          htmlFor={id}
+          className="block mb-1.5 pl-0.5 text-sm font-medium text-ink-soft"
+        >
           {label}
         </label>
       )}
@@ -17,6 +22,7 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
           control={control}
           render={({ field: { onChange } }) => (
             <Editor
+              id={id}
               apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
               initialValue={defaultValue}
               init={{
@@ -30,7 +36,6 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
                   "autolink",
                   "lists",
                   "link",
-                  "image",
                   "charmap",
                   "preview",
                   "anchor",
@@ -41,15 +46,11 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
                   "insertdatetime",
                   "media",
                   "table",
-                  "code",
                   "help",
                   "wordcount",
-                  "anchor",
                 ],
                 toolbar:
-                  "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
-                // Mirrors the .browser-css reading styles so what you write
-                // previews close to how it will actually be read.
+                  "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
                 content_style: `
                   body {
                     font-family: Fraunces, Georgia, serif;

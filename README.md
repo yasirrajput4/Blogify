@@ -151,31 +151,6 @@ npm run lint      # Run ESLint
 
 ---
 
-## 🚢 Deployment
-
-### Vercel (Recommended)
-
-```bash
-npm install -g vercel
-vercel
-```
-
-Add your `.env` variables in the Vercel dashboard:
-**Project → Settings → Environment Variables**
-
-### Netlify
-
-```bash
-npm run build
-```
-
-Drag and drop the `dist/` folder to Netlify, or connect your GitHub repo for automatic deploys.
-Add environment variables under **Site → Site configuration → Environment variables**.
-
-> **Important:** After deploying, go to your Appwrite Console → **Project → Overview → Platforms** and add your production domain to the allowed Web Platforms list. Without this, Appwrite will block all requests from your live URL with a CORS error.
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome!

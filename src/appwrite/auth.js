@@ -33,34 +33,25 @@ export class AuthService {
 
   async login({ email, password }) {
     try {
-      //  Fixed: was createEmailSession() — deprecated/removed in Appwrite v1.5+
       return await this.account.createEmailSession(email, password);
     } catch (error) {
       throw error;
     }
   }
 
-  // async getCurrentUser() {
-  //   try {
-  //     return await this.account.get();
-  //   } catch (error) {
-  //     // Expected to throw when no session exists — not a real error
-  //     console.log("AuthService :: getCurrentUser ::", error.message);
-  //   }
-  //   return null;
-  // }
-async getCurrentUser() {
-  try {
-    return await this.account.get();
-  } catch (error) {
-    // Agar error code 401 hai (yaani no active session), toh chupchaap null return karo
-    // Baaki kisi asli error (jaise Appwrite crashed) par log dikhao
-    if (error.code !== 401) {
-      console.log("AuthService :: getCurrentUser :: Real Error ->", error.message);
+  async getCurrentUser() {
+    try {
+      return await this.account.get();
+    } catch (error) {
+      if (error.code !== 401) {
+        console.log(
+          "AuthService :: getCurrentUser :: Real Error ->",
+          error.message,
+        );
+      }
     }
+    return null;
   }
-  return null;
-}
   async logout() {
     try {
       await this.account.deleteSessions();
