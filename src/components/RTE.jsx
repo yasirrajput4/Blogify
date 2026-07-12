@@ -20,13 +20,14 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
         <Controller
           name={name || "content"}
           control={control}
-          render={({ field: { onChange } }) => (
+          render={({ field: { onChange, value } }) => (
             <Editor
               id={id}
               apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
-              initialValue={defaultValue}
+              // 'value' prop use karne se typing reverse nahi hogi
+              value={value || defaultValue}
+              onEditorChange={onChange}
               init={{
-                initialValue: defaultValue,
                 height: 500,
                 menubar: true,
                 skin: "oxide",
@@ -70,7 +71,6 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
                   }
                 `,
               }}
-              onEditorChange={onChange}
             />
           )}
         />
