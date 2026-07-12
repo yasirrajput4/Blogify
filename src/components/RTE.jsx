@@ -24,7 +24,6 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
             <Editor
               id={id}
               apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
-              // 'value' prop use karne se typing reverse nahi hogi
               value={value || defaultValue}
               onEditorChange={onChange}
               init={{
