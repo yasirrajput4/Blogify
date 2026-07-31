@@ -10,7 +10,7 @@
 Write beautifully. Publish instantly. Read with intention.</p>
 
 <p>
-  <a href="https://blogify-eosin-zeta.vercel.app" target="_blank">
+  <a href="https://blogify-yasir.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/🌐  Live%20Demo-Open%20App-C1502E?style=flat-square&labelColor=1F1B16" />
   </a>
   &nbsp;&nbsp;
@@ -31,7 +31,7 @@ Write beautifully. Publish instantly. Read with intention.</p>
 
 <br/>
 
-<a href="https://blogify-eosin-zeta.vercel.app" target="_blank">
+<a href="https://blogify-yasir.vercel.app" target="_blank">
   <img
     width="1912"
     alt="Blogify — editorial blogging platform screenshot"
