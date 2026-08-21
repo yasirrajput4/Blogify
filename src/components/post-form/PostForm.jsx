@@ -1,4 +1,5 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect } from "react";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import Button from "../Button";
 import Input from "../Input";
@@ -89,7 +90,7 @@ export default function PostForm({ post }) {
     return "";
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const subscription = watch((value, { name }) => {
       if (name === "title") {
         setValue("slug", slugTransform(value.title), { shouldValidate: true });
@@ -192,3 +193,13 @@ export default function PostForm({ post }) {
     </form>
   );
 }
+
+PostForm.propTypes = {
+  post: PropTypes.shape({
+    $id: PropTypes.string,
+    title: PropTypes.string,
+    content: PropTypes.string,
+    status: PropTypes.string,
+    featuredImage: PropTypes.string,
+  }),
+};
