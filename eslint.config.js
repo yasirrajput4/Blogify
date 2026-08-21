@@ -12,6 +12,11 @@ export default [
       ecmaVersion: "latest",
       sourceType: "module",
       globals: globals.browser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true, // 👈 Enable JSX parsing explicitly
+        },
+      },
     },
     settings: { react: { version: "detect" } },
     plugins: {
