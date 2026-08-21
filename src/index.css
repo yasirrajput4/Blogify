@@ -1,6 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #faf6ef;
+  --color-paper-dim: #f2ecde;
+  --color-ink: #1f1b16;
+  --color-ink-soft: #4a4339;
+  --color-clay: #8b6f5c;
+  --color-rule: #e4dcc8;
+  --color-terracotta: #c1502e;
+  --color-terracotta-dark: #a23f22;
+  --color-sage: #5b7b5a;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
 
 @layer base {
   html {
@@ -17,7 +31,7 @@
 
   /* Visible keyboard focus everywhere — accessibility floor */
   :focus-visible {
-    outline: 2px solid theme("colors.terracotta");
+    outline: 2px solid var(--color-terracotta);
     outline-offset: 2px;
   }
 }
