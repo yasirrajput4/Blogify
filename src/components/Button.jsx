@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 export default function Button({
   children,
@@ -25,3 +26,11 @@ export default function Button({
     </button>
   );
 }
+
+Button.propTypes = {
+  children: PropTypes.node,
+  type: PropTypes.string,
+  bgColor: PropTypes.string,
+  textColor: PropTypes.string,
+  className: PropTypes.string,
+};
