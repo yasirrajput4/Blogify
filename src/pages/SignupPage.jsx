@@ -1,4 +1,3 @@
-import React from "react";
 import SignupComponent from "../components/Signup";
 
 function SignupPage() {

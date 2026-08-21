@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../../components/container/Container";
 import Logo from "../../components/Logo";
 import LogoutBtn from "../../components/Header/LogoutBtn";
