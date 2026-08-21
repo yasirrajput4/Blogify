@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
@@ -16,3 +17,8 @@ export default function AuthLayout({ children, authentication = true }) {
 
   return <>{children}</>;
 }
+
+AuthLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+  authentication: PropTypes.bool,
+};
