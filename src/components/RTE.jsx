@@ -1,3 +1,5 @@
+import { useId } from "react";
+import PropTypes from "prop-types";
 import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form";
 
@@ -76,3 +78,10 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
     </div>
   );
 }
+
+RTE.propTypes = {
+  name: PropTypes.string,
+  control: PropTypes.object,
+  label: PropTypes.string,
+  defaultValue: PropTypes.string,
+};
