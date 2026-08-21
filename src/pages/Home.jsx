@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
 import Container from "../components/container/Container";
 import PostCard from "../components/PostCard";
@@ -45,7 +45,7 @@ function Home() {
           </h1>
           <p className="mt-3 text-clay max-w-md mx-auto">
             Stories from writers worth following. Log in or create an account to
-            see what's new.
+            see what&apos;s new.
           </p>
         </Container>
       </div>
