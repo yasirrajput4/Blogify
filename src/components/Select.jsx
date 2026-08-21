@@ -1,4 +1,5 @@
 import React, { useId } from "react";
+import PropTypes from "prop-types";
 
 function Select({ options, label, className = "", ...props }, ref) {
   const id = useId();
@@ -35,5 +36,11 @@ function Select({ options, label, className = "", ...props }, ref) {
     </div>
   );
 }
+
+Select.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
+  label: PropTypes.string,
+  className: PropTypes.string,
+};
 
 export default React.forwardRef(Select);
